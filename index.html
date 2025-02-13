@@ -93,6 +93,7 @@
         const noButton = document.querySelector('.no-btn');
         const question = document.querySelector('h1');
         const gifContainer = document.querySelector('.gif-container');
+        const valentineSong = document.getElementById('valentineSong'); // Get the audio element
         let noClickCount = 0;
         const noTexts = [
             "¿Estás realmente segura?",
@@ -103,7 +104,6 @@
             "Voy a llorar...",
             "Está bien, ahora realmente estoy llorando... 😢"
         ];
-        const valentineSong = document.getElementById('valentineSong'); // Get the audio element
 
         noButton.addEventListener('click', () => {
             if (noClickCount < noTexts.length) {
@@ -120,7 +120,10 @@
         });
 
         yesButton.addEventListener('click', () => {
-            // Create a new element to show the message and gif
+            // Reproduce la canción automáticamente
+            valentineSong.play();
+            
+            // Crear nuevo contenido con el gif y el mensaje
             const newContent = document.createElement('div');
             newContent.classList.add('full-screen');
             newContent.innerHTML = `
@@ -128,7 +131,7 @@
                 <br><br>
                 <img src="dog.gif" alt="Happy Dog">
             `;
-            document.body.appendChild(newContent); // Add the new content to the body
+            document.body.appendChild(newContent); // Añadir el nuevo contenido a la página
         });
     </script>
 </body>
