@@ -85,8 +85,8 @@
     <button class="btn yes-btn">Si</button>
     <button class="btn no-btn">No</button>
     
-    <!-- Audio Element -->
-    <audio id="valentineSong" src="Un Millón de Primaveras.mp3"></audio>
+    <!-- Audio Element with autoplay -->
+    <audio id="valentineSong" src="path-to-your-song.mp3" autoplay></audio>
 
     <script>
         const yesButton = document.querySelector('.yes-btn');
@@ -121,7 +121,13 @@
 
         yesButton.addEventListener('click', () => {
             valentineSong.play(); // Play the song when 'Si' is clicked
-            document.body.innerHTML = '<h1>Gracias por aceptar ser mi San Valentín! 🌻</h1><br><br><div class="full-screen"><img src="dog.gif" alt="Happy Dog"></div>';
+            document.body.innerHTML = `
+                <h1>Gracias por aceptar ser mi San Valentín! 🌻</h1>
+                <br><br>
+                <div class="full-screen">
+                    <img src="dog.gif" alt="Happy Dog">
+                </div>
+            `;
         });
     </script>
 </body>
