@@ -86,7 +86,7 @@
     <button class="btn no-btn">No</button>
     
     <!-- Audio Element with autoplay -->
-    <audio id="valentineSong" src="path-to-your-song.mp3" autoplay></audio>
+    <audio id="valentineSong" src="Un Millón de Primaveras.mp3" autoplay></audio>
 
     <script>
         const yesButton = document.querySelector('.yes-btn');
@@ -120,14 +120,15 @@
         });
 
         yesButton.addEventListener('click', () => {
-            valentineSong.play(); // Play the song when 'Si' is clicked
-            document.body.innerHTML = `
+            // Create a new element to show the message and gif
+            const newContent = document.createElement('div');
+            newContent.classList.add('full-screen');
+            newContent.innerHTML = `
                 <h1>Gracias por aceptar ser mi San Valentín! 🌻</h1>
                 <br><br>
-                <div class="full-screen">
-                    <img src="dog.gif" alt="Happy Dog">
-                </div>
+                <img src="dog.gif" alt="Happy Dog">
             `;
+            document.body.appendChild(newContent); // Add the new content to the body
         });
     </script>
 </body>
