@@ -6,7 +6,7 @@
     <title>Valentine's Day</title>
     <style>
         body {
-            background-color: #fea8d9;
+            background-color: #50cdae;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -58,7 +58,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #59e0e4;
+            background-color: #fea8d9;
         }
         .full-screen img {
             width: 50%;
@@ -78,12 +78,16 @@
     </style>
 </head>
 <body>
-    <h1>Will you be my Valentine?</h1>
+    <h1>Quieres ser mi San Valentin? 🫶🏽</h1>
     <div class="gif-container">
         <img src="valentine.gif" alt="Happy Bear">
     </div>
     <button class="btn yes-btn">Si</button>
     <button class="btn no-btn">No</button>
+    
+    <!-- Audio Element -->
+    <audio id="valentineSong" src="Un Millón de Primaveras.mp3"></audio>
+
     <script>
         const yesButton = document.querySelector('.yes-btn');
         const noButton = document.querySelector('.no-btn');
@@ -99,6 +103,8 @@
             "Voy a llorar...",
             "Está bien, ahora realmente estoy llorando... 😢"
         ];
+        const valentineSong = document.getElementById('valentineSong'); // Get the audio element
+
         noButton.addEventListener('click', () => {
             if (noClickCount < noTexts.length) {
                 noButton.textContent = noTexts[noClickCount];
@@ -112,8 +118,10 @@
                 noButton.classList.add('hidden');
             }
         });
+
         yesButton.addEventListener('click', () => {
-            document.body.innerHTML = '<div class="full-screen"><img src="dog.gif" alt="Happy Dog"></div>';
+            valentineSong.play(); // Play the song when 'Si' is clicked
+            document.body.innerHTML = '<h1>Gracias por aceptar ser mi San Valentín! 🌻</h1><br><br><div class="full-screen"><img src="dog.gif" alt="Happy Dog"></div>';
         });
     </script>
 </body>
